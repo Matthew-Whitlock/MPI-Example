@@ -1,8 +1,9 @@
 #include <mpi.h>
+#include <stdio.h>
 
 int main(int argc, char** argv){
     //Initialize the MPI environment
-    MPI_Inint(NULL,NULL);
+    MPI_Init(NULL,NULL);
 
     //Get the number of processes
     int world_size;
@@ -10,7 +11,7 @@ int main(int argc, char** argv){
 
     //Get the name of the process
     int world_rank;
-    MPI_Comm_rank(MPI_COMM_WORLD, $world_rank);
+    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
     //Print off a hello world message
     printf("Hello world from processor %d\n", world_rank);
