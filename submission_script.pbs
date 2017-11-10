@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -q batch
+#PBS -l nodes=2:ppn=5
+#PBS -l walltime=1:00
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+module load openmpi-2.1/gnu-4.8.4
+
+mpirun hello-world
